@@ -10,7 +10,7 @@ A data structure is a way that you can choose to organize your data while progra
 ### [Set](set.md)
 ### [Tree](tree.md)
 
-## O notation
+## O Notation
 O notation is a way to describe the efficiency of a program based off of how many operations it will take if there was more data going through the program. with small amounts of data, the design of your program and data structures may not affect the overall efficiency much, but as you think about putting millions of points of data through your code how will efficiency stack up?
 
 ![O Notation graph](O-notation-graphic.png)
