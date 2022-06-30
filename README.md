@@ -13,8 +13,10 @@
 ## III. [Set](set.md)
 * Introduction
 * Inserting by hash
+* Set order
 * Operations
 * Efficiency in terms of O Notaion
+* Intersection and Union
 * Example
 * Problem to Solve
 ## IV. [Tree](tree.md)
