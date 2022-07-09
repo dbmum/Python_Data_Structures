@@ -5,11 +5,12 @@
 * O notation
 ## II. [Stack](stack.md)
 * Introduction
+* Reverse data
 * Operations
-* Efficiency in terms of O Notaion
-* Capacity to reverse
+* O Notation of a Stack
 * Example
 * Problem to Solve
+* Solution
 ## III. [Set](set.md)
 * Introduction
 * Inserting by hash
