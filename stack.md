@@ -2,7 +2,9 @@
 # Stack
 ## Introduction
 A stack is a data structure where order is the most important thing. Everything in a stack operates in a FILO structure, meaning First In, Last Out. For example when loading bullets into a cartridge you load the first bullet in, and as you push the other bullets in, it pushes that first bullet further into the cartridge. The last bullet that you shoot before you are empty is the first bullet you loaded. In this way a stack is great at reversing data.
+
 ![Bullet Stack](Bullet-stack.PNG)
+
 ## Reverse data
 One of the greatest strengths of the stack is its ability to reverse ordered data easily. All you need to do is add all of the data to the stack, and then remove it all. Since all of the operations of a stack operate with the last position only, it is O(n) efficiency to reverse a whole data set.
 ## Operations
@@ -53,7 +55,7 @@ pop(value) | O(1)
 size(value) | O(1)
 empty() | O(1)
 ## Example
-In this example I will show how in O(n performance you can reverse all of the data in a stack). I will be doing this with the [IMDB top 10 movies list](https://www.imdb.com/chart/top/). We are starting with the stack in order of 10th best to first.
+In this example I will show how in O(n) performance you can reverse all of the data in a stack. I will be doing this with the [IMDB top 10 movies list](https://www.imdb.com/chart/top/). We are starting with the stack in order of 10th best to first.
 ```python
 ten_to_one = [
     'The Good, the Bad and the Ugly',
@@ -123,7 +125,7 @@ gun.Show_Next_Bullet() # 'piercing'
 gun.Shoot()
 gun.Reload()
 
-print("\nShoot the rest")
+print("\nNow shoot the rest\n")
 print(gun.Shoot()) #'hollow-tip'
 print(gun.Shoot()) #'piercing'
 print(gun.Shoot()) #'piercing'
@@ -132,60 +134,11 @@ print(gun.Shoot()) #'regular'
 print(gun.Shoot()) #'empty'
 ```
 
-## Solution
+## [Solution](Stack_Solution.py)
 Try solving the above problem before comparing your code to this possible solution.
-```python
-class Gun:
-    def __init__(self):
-        self.reload_cycle = ['Regular', 'Piercing', 'Hollow-tip']
-        self.current_reload_index = 3 
-        self.cartridge = []
-        self.cartridge_max = 5
 
-    def Shoot(self):
-        """
-        A function that checks to see if the gun is empty, and then returns the bullet it its not empty, otherwise return "empty"
-        """
-        if(len(self.cartridge) != 0):
-            return self.cartridge.pop()
-        else:
-            return 'Empty'
+Remember that there are multiple ways to do this, but try to implement this using stack functions before you compare to the solution below.
 
-    def Reload(self):
-        """
-        Have the cartridge reload to max capacity using the next bullet type in the cycle
-        """
-        self.current_reload_index +=1
-        
-        if self.current_reload_index >= len(self.reload_cycle):
-            self.current_reload_index = 0
-        
-        while len(self.cartridge) < self.cartridge_max:
-            self.cartridge.append(self.reload_cycle[self.current_reload_index])
-    
-    def Show_Next_Bullet(self):
-        """
-        print what the next bullet in the cartridge to be shot is
-        """
-        copy = self.cartridge[:]
-        print(copy.pop())
+* [Solution](Stack_Solution.py)
 
-gun = Gun()
-gun.Reload()
-print(gun.Shoot()) #'regular'
-gun.Shoot()
-gun.Shoot()
-gun.Reload()
-gun.Show_Next_Bullet() # 'piercing'
-gun.Shoot()
-gun.Reload()
-
-print("\nShoot the rest")
-print(gun.Shoot()) #'hollow-tip'
-print(gun.Shoot()) #'piercing'
-print(gun.Shoot()) #'piercing'
-print(gun.Shoot()) #'regular'
-print(gun.Shoot()) #'regular'
-print(gun.Shoot()) #'empty'
-```
 [Home](README.md)
